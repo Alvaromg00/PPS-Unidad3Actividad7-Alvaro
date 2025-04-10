@@ -66,3 +66,16 @@ Ya tendriamos el control total del sistema.
 Una vez explotadas la vulnerabilidades vamos a ver como mitigarlas:
 
 
+Creamos el siguiente archivo llamado [rce2.php](./Recursos/rce2.php) que espera recibir un comando por parámetro por url:
+
+
+![rce2.php](./Imagenes/8.png)
+
+Una forma de mitigación es eliminar la posibilidad de ejecutar comandos eliminando ***shell_exec()***:
+
+
+[rce3.php](./Recursos/rce3.php):
+
+![rce3.php](./Imagenes/9.png)
+
+
