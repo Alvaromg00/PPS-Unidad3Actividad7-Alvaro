@@ -71,11 +71,26 @@ Creamos el siguiente archivo llamado [rce2.php](./Recursos/rce2.php) que espera 
 
 ![rce2.php](./Imagenes/8.png)
 
-Una forma de mitigación es eliminar la posibilidad de ejecutar comandos eliminando ***shell_exec()***:
-
-
-[rce3.php](./Recursos/rce3.php):
+Una forma de mitigación es eliminar la posibilidad de ejecutar comandos eliminando ***shell_exec()***, para ello creamos el archivo [rce3.php](./Recursos/rce3.php):
 
 ![rce3.php](./Imagenes/9.png)
 
+Los beneficios de eliminar *shell_exec()* son:
 
++ Bloquea cualquier intento de ejecución de código en el sistema.
++ Evita ataques RCE de forma definitiva.
++ No necesita más medidas de seguridad, ya que la ejecución de comandos es eliminada.
+
+También podemos hacer uso de listas blancas si necesitamos hacer uso de algunos comandos:
+
+Creamos un fichero [rce4.php](./Recursos/rce4.php) con los comandos permitidos '***ls***', '***whoami***' y '***pwd***':
+
+![rce4.php](./Imagenes/10.png)
+
+Si probamos a pasarle un comando de los permitidos funciona:
+
+![rce4.php](./Imagenes/11.png)
+
+En cambio, si introducimos un comando no permitido, nos indica que el comando no esta permitido;
+
+![rce4.php](./Imagenes/12.png)
