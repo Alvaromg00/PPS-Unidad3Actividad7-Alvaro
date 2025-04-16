@@ -10,6 +10,14 @@ Algunas de las consecuencias que tiene el *RCE*:
 + Ejecución de comandos maliciosos (descarga y ejecución de malware).
 + Escalada de privilegios y control total del sistema.
 
+## Indice
+> 1. [Creación de página vulnerable a RCE](#)
+> 2. [Mitigaciones de RCE](#)
+> &nbsp;&nbsp;&nbsp;&nbsp;2.1 [Eliminar el uso de shell_exec()](#)
+> &nbsp;&nbsp;&nbsp;&nbsp;2.2 [Listas blancas](#)
+> &nbsp;&nbsp;&nbsp;&nbsp;2.3 [Ejecutar Comandos con Escapes Seguros](#)
+> &nbsp;&nbsp;&nbsp;&nbsp;2.4 [Prueba final](#)
+
 ## Creación de página vulnerable a RCE
 
 Vamos a crear una pequeña página llamada: [rce.php](./Recursos/rce.php) con un input que va a recibir una dirección ip y se va a encargar de hacer ping a ella:
@@ -71,6 +79,8 @@ Creamos el siguiente archivo llamado [rce2.php](./Recursos/rce2.php) que espera 
 
 ![rce2.php](./Imagenes/8.png)
 
+### Eliminar el uso de shell_exec()
+
 Una forma de mitigación es eliminar la posibilidad de ejecutar comandos eliminando ***shell_exec()***, para ello creamos el archivo [rce3.php](./Recursos/rce3.php):
 
 ![rce3.php](./Imagenes/9.png)
@@ -80,6 +90,8 @@ Los beneficios de eliminar *shell_exec()* son:
 + Bloquea cualquier intento de ejecución de código en el sistema.
 + Evita ataques RCE de forma definitiva.
 + No necesita más medidas de seguridad, ya que la ejecución de comandos es eliminada.
+
+### Listas blancas
 
 También podemos hacer uso de listas blancas si necesitamos hacer uso de algunos comandos:
 
@@ -94,3 +106,8 @@ Si probamos a pasarle un comando de los permitidos funciona:
 En cambio, si introducimos un comando no permitido, nos indica que el comando no esta permitido;
 
 ![rce4.php](./Imagenes/12.png)
+
+### Ejecutar Comandos con Escapes Seguros
+
+
+### Prueba Final
