@@ -11,12 +11,12 @@ Algunas de las consecuencias que tiene el *RCE*:
 + Escalada de privilegios y control total del sistema.
 
 ## Indice
-> 1. [Creación de página vulnerable a RCE](#)  
-> 2. [Mitigaciones de RCE](#)  
-> &nbsp;&nbsp;&nbsp;&nbsp;2.1 [Eliminar el uso de shell_exec()](#)  
-> &nbsp;&nbsp;&nbsp;&nbsp;2.2 [Listas blancas](#)  
-> &nbsp;&nbsp;&nbsp;&nbsp;2.3 [Ejecutar Comandos con Escapes Seguros](#)  
-> &nbsp;&nbsp;&nbsp;&nbsp;2.4 [Prueba final](#)  
+> 1. [Creación de página vulnerable a RCE](#creación-de-página-vulnerable-a-rce)  
+> 2. [Mitigaciones de RCE](#mitigaciones-de-rce)  
+> &nbsp;&nbsp;&nbsp;&nbsp;2.1 [Eliminar el uso de shell_exec()](#eliminar-el-uso-de-shell_exec)  
+> &nbsp;&nbsp;&nbsp;&nbsp;2.2 [Listas blancas](#listas-blancas)  
+> &nbsp;&nbsp;&nbsp;&nbsp;2.3 [Ejecutar Comandos con Escapes Seguros](#ejecutar-comandos-con-escapes-seguros)  
+> &nbsp;&nbsp;&nbsp;&nbsp;2.4 [Prueba final](#prueba-final)  
 
 ## Creación de página vulnerable a RCE
 
