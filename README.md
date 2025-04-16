@@ -16,7 +16,6 @@ Algunas de las consecuencias que tiene el *RCE*:
 > &nbsp;&nbsp;&nbsp;&nbsp;2.1 [Eliminar el uso de shell_exec()](#eliminar-el-uso-de-shell_exec)  
 > &nbsp;&nbsp;&nbsp;&nbsp;2.2 [Listas blancas](#listas-blancas)  
 > &nbsp;&nbsp;&nbsp;&nbsp;2.3 [Ejecutar Comandos con Escapes Seguros](#ejecutar-comandos-con-escapes-seguros)  
-> &nbsp;&nbsp;&nbsp;&nbsp;2.4 [Prueba final](#prueba-final)  
 
 ## Creación de página vulnerable a RCE
 
@@ -109,5 +108,10 @@ En cambio, si introducimos un comando no permitido, nos indica que el comando no
 
 ### Ejecutar Comandos con Escapes Seguros
 
+Si se necesita ejecutar comandos con argumentos, podemos usar ***escapeshellcmd()*** para evitar inyección de comandos.
 
-### Prueba Final
+Creamos un fichero [rce5.php](./Recursos/rce5.php) con escapes para argumentos, y también escapa caracteres especiales con ***escapeshellcmd()*** para mayor seguridad:
+
+Si intentamos agregar el comando **rm -rf /** la función escapeshellarg() convertirá la entrada en: 'ping 8.8.8.8; rm -rf/), eliminará todo el comando y no ejecuta nada. Por eso controlamos cadena vacía:
+
+![rce4.php](./Imagenes/13.png)
